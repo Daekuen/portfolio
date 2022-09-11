@@ -14,6 +14,8 @@
   --color-yellow: #fff7d1;
   --color-orange: #feb546;
   --color-black: #000000;
+  --color-back-green: #b4e97a;
+  --color-dark-green: #3cc40f;
 
   /* Font size */
   --font-large: 48px;
@@ -53,6 +55,12 @@ ul {
   padding-left: 0;
 }
 
+button {
+  background: transparent;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
 /* Typography */
 h1 {
   font-size: var(--font-large);
@@ -86,7 +94,7 @@ p {
 #navbar {
   display: flex;
   justify-content: space-between;
-  background-color: var(--color-pink);
+  background-color: var(--color-back-green);
   align-items: center;
   color: var(--color-white);
 }
@@ -102,6 +110,7 @@ p {
   height: 70px;
   padding: 5px;
   border-radius: 15px;
+  margin: 5px 10px;
 }
 
 .navbar__menu {
@@ -120,5 +129,35 @@ p {
 }
 
 .navbar__menu-item:hover {
-  background-color: var(--color-dark-pink);
+  background-color: var(--color-dark-green);
+}
+
+/* Home */
+#home {
+  background: url("imgs/home-background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 40px;
+  text-align: center;
+}
+
+.home__selfie {
+  width: 250px;
+  border-radius: 50%;
+  border: 2px solid var(--color-light-white);
+}
+
+.home__name,
+.home__motto {
+  color: var(--color-white);
+}
+
+.home__btn {
+  color: var(--color-white);
+  font-size: var(--font-regular);
+  font-weight: var(--weight-semi-bold);
+  margin: 24px;
+  padding: 8px 12px;
+  border: 2px solid var(--color-light-white);
 }
