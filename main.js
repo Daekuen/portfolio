@@ -36,16 +36,30 @@ contactBtn.addEventListener("click", (event) => {
   scrollIntoView(link);
 });
 
-function scrollIntoView(sectionId) {
-  const scrollTo = document.querySelector(sectionId);
-  scrollTo.scrollIntoView({ behavior: "smooth" });
-}
-
 // Transparent home (스크롤 내릴수록 home화면 점점 흐려지게하기.)
 
 const home = document.querySelector(".home__container");
 const homeHeight = home.getBoundingClientRect().height;
+
 document.addEventListener("scroll", () => {
-  console.log(home.style);
   home.style.opacity = 1 - window.scrollY / homeHeight;
 });
+
+// show "Arrow up" btn when scrolling down
+const arrowBtn = document.querySelector(".arrow__btn");
+document.addEventListener("scroll", () => {
+  if (window.scrollY > homeHeight / 2) {
+    arrowBtn.classList.add("visible");
+  } else {
+    arrowBtn.classList.remove("visible");
+  }
+});
+
+arrowBtn.addEventListener("click", (event) => {
+  scrollIntoView("#home");
+});
+
+function scrollIntoView(sectionId) {
+  const scrollTo = document.querySelector(sectionId);
+  scrollTo.scrollIntoView({ behavior: "smooth" });
+}

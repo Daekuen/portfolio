@@ -434,6 +434,27 @@ p {
   color: var(--color-dark-white);
 }
 
+/* Arrow up */
+
+.arrow__btn {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 70px;
+  height: 70px;
+  font-size: 38px;
+  color: var(--color-white);
+  background-color: var(--color-dark-green);
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+  transition: all var(--animation-duration) ease-in;
+}
+
+.arrow__btn.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
 /* For below 768px screen width */
 @media screen and (max-width: 768px) {
   /* Navbar */
