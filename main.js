@@ -40,3 +40,12 @@ function scrollIntoView(sectionId) {
   const scrollTo = document.querySelector(sectionId);
   scrollTo.scrollIntoView({ behavior: "smooth" });
 }
+
+// Transparent home (스크롤 내릴수록 home화면 점점 흐려지게하기.)
+
+const home = document.querySelector(".home__container");
+const homeHeight = home.getBoundingClientRect().height;
+document.addEventListener("scroll", () => {
+  console.log(home.style);
+  home.style.opacity = 1 - window.scrollY / homeHeight;
+});
