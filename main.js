@@ -11,3 +11,27 @@ document.addEventListener("scroll", () => {
     navbar.classList.remove("navbar--dark");
   }
 });
+
+// scroll to section
+
+const navbarMenu = document.querySelector(".navbar__menu");
+navbarMenu.addEventListener("click", (event) => {
+  const target = event.target;
+  const link = target.dataset.link;
+  // console.log(link);
+  if (link == null) {
+    return;
+  }
+
+  const scrollTo = document.querySelector(link);
+  scrollTo.scrollIntoView({ behavior: "smooth" });
+});
+
+const contactBtn = document.querySelector(".home__btn");
+contactBtn.addEventListener("click", (event) => {
+  // console.log(event.target);
+  const link = event.target.dataset.link;
+  scrollTo = document.querySelector(link);
+
+  scrollTo.scrollIntoView({ behavior: "smooth" });
+});
