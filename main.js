@@ -59,6 +59,29 @@ arrowBtn.addEventListener("click", (event) => {
   scrollIntoView("#home");
 });
 
+// project filtering
+const workBtnContainer = document.querySelector(".work__categories"); // 버튼 container
+const projectContainer = document.querySelector(".work__projects"); // project container
+const projects = document.querySelectorAll(".project"); // project들을 array로 받아옴.
+
+workBtnContainer.addEventListener("click", (event) => {
+  const filter = event.target.dataset.filter || event.target.parentNode.dataset.filter;
+  if (filter == null) return;
+
+  projectContainer.classList.add("anim-out");
+
+  setTimeout(() => {
+    projects.forEach((project) => {
+      if (filter === "*" || filter === project.dataset.type) {
+        project.classList.remove("invisible");
+      } else {
+        project.classList.add("invisible");
+      }
+    });
+    projectContainer.classList.remove("anim-out");
+  }, 300);
+});
+
 function scrollIntoView(sectionId) {
   const scrollTo = document.querySelector(sectionId);
   scrollTo.scrollIntoView({ behavior: "smooth" });
