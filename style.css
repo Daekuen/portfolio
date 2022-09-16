@@ -395,6 +395,7 @@ p {
   opacity: 0;
   transition: all var(--animation-duration) ease-in;
   transform: translateY(10px);
+  color: var(--color-orange);
 }
 
 .project:hover .project__description {
@@ -403,19 +404,19 @@ p {
 }
 
 .project__description h3 {
-  color: var(--color-white);
+  color: var(--color-orange);
 }
 
 .project__description h3:after {
   content: " ";
   display: block;
-  width: 25px;
+  width: 50px;
   height: 2px;
   background-color: var(--color-dark-white);
   position: relative;
   left: 50%;
   margin-top: 8px;
-  margin-left: -12px;
+  transform: translateX(-50%);
 }
 
 /* Contact */
@@ -482,6 +483,12 @@ p {
     text-align: center;
     width: 100%;
     display: none;
+  }
+
+  .navbar__menu.navbar__toggle {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
   }
 
   /* About */

@@ -24,7 +24,16 @@ navbarMenu.addEventListener("click", (event) => {
     return;
   }
 
+  navbarMenu.classList.remove("navbar__toggle");
   scrollIntoView(link);
+});
+
+// nav toggle
+
+const navToggleBtn = document.querySelector(".navbar__toggle-btn");
+console.log(navToggleBtn);
+navToggleBtn.addEventListener("click", (event) => {
+  navbarMenu.classList.toggle("navbar__toggle");
 });
 
 // click on 'contact me' btn
