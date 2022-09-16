@@ -19,6 +19,7 @@ navbarMenu.addEventListener("click", (event) => {
   const target = event.target;
   const link = target.dataset.link;
   // console.log(link);
+
   if (link == null) {
     return;
   }
@@ -67,6 +68,13 @@ const projects = document.querySelectorAll(".project"); // project들을 array�
 workBtnContainer.addEventListener("click", (event) => {
   const filter = event.target.dataset.filter || event.target.parentNode.dataset.filter;
   if (filter == null) return;
+
+  // work에서 선택된 버튼에만 불들어오게 하기.
+  const activeBtn = document.querySelector(".category__btn.active");
+  activeBtn.classList.remove("active");
+  const target = event.target.nodeName === "BUTTON" ? event.target : event.target.parentNode;
+  target.classList.add("active");
+  //
 
   projectContainer.classList.add("anim-out");
 
