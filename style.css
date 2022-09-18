@@ -321,6 +321,7 @@ p {
   flex-basis: 30%;
   font-size: var(--font-regular);
   font-weight: var(--weight-semi-bold);
+  position: relative;
 }
 
 .category__btn.active,
@@ -332,7 +333,7 @@ p {
 .category__btn.active .category__count,
 .category__btn:hover .category__count {
   opacity: 1;
-  top: 0;
+  top: 6px;
 }
 .category__count {
   background-color: var(--color-orange);
@@ -342,9 +343,9 @@ p {
   height: 24px;
   line-height: 24px;
   display: inline-block;
-  position: relative;
-  top: -20px;
-  left: 4px;
+  position: absolute;
+  right: 70px;
+  top: 100px;
   opacity: 0;
   transition: all var(--animation-duration) ease-in;
 }
@@ -468,9 +469,20 @@ p {
 }
 /* For below 768px screen width */
 @media screen and (max-width: 768px) {
+  :root {
+    /* Font size */
+    --font-large: 30px;
+    --font-medium: 18px;
+    --font-regular: 16px;
+    --font-small: 14px;
+    --font-micro: 12px;
+  }
   /* Navbar */
   .navbar__toggle-btn {
     display: block;
+    top: 28px;
+    right: 28px;
+    font-size: var(--font-medium);
   }
 
   #navbar {
@@ -491,13 +503,20 @@ p {
     justify-content: center;
   }
 
+  .section {
+    padding: 16px;
+    padding-top: 80px;
+  }
+
   /* About */
   .about__majors {
     flex-direction: column;
+    margin-top: 30px;
+    margin-bottom: 0px;
   }
 
   .major {
-    margin-bottom: 32px;
+    margin-bottom: 30px;
   }
 
   /* Skills */
@@ -505,6 +524,24 @@ p {
     flex-direction: column;
   }
 
+  /* Works */
+  .work__categories {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .category__btn {
+    margin: 2px;
+    padding: 8px 24px;
+  }
+
+  .arrow__btn {
+    bottom: 16px;
+    right: 16px;
+    width: 50px;
+    height: 50px;
+    font-size: 28px;
+  }
   /* .project {
     flex-grow: 1;
   } */
